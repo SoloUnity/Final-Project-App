@@ -11,7 +11,8 @@ import SwiftUI
 struct Programming_Techniques_and_ApplicationsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(ContentModel())
         }
     }
 }

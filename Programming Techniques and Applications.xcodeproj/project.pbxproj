@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		8BB5B87028302A5B0017223D /* Programming_Techniques_and_ApplicationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5B86F28302A5B0017223D /* Programming_Techniques_and_ApplicationsApp.swift */; };
-		8BB5B87228302A5B0017223D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5B87128302A5B0017223D /* ContentView.swift */; };
+		8BB5B87228302A5B0017223D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5B87128302A5B0017223D /* HomeView.swift */; };
 		8BB5B87428302A5E0017223D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB5B87328302A5E0017223D /* Assets.xcassets */; };
 		8BB5B87728302A5E0017223D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB5B87628302A5E0017223D /* Preview Assets.xcassets */; };
+		8BB5B88228302AF70017223D /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5B88128302AF70017223D /* ContentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8BB5B86C28302A5B0017223D /* Programming Techniques and Applications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Programming Techniques and Applications.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB5B86F28302A5B0017223D /* Programming_Techniques_and_ApplicationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programming_Techniques_and_ApplicationsApp.swift; sourceTree = "<group>"; };
-		8BB5B87128302A5B0017223D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8BB5B87128302A5B0017223D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8BB5B87328302A5E0017223D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BB5B87628302A5E0017223D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8BB5B88128302AF70017223D /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				8BB5B86F28302A5B0017223D /* Programming_Techniques_and_ApplicationsApp.swift */,
-				8BB5B87128302A5B0017223D /* ContentView.swift */,
+				8BB5B88028302AC70017223D /* Helpers */,
+				8BB5B87F28302ABE0017223D /* Ressources */,
+				8BB5B87E28302AB70017223D /* ViewModels */,
+				8BB5B87D28302AB20017223D /* Views */,
 				8BB5B87328302A5E0017223D /* Assets.xcassets */,
 				8BB5B87528302A5E0017223D /* Preview Content */,
 			);
@@ -65,6 +70,36 @@
 				8BB5B87628302A5E0017223D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8BB5B87D28302AB20017223D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8BB5B87128302A5B0017223D /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8BB5B87E28302AB70017223D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8BB5B88128302AF70017223D /* ContentModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8BB5B87F28302ABE0017223D /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		8BB5B88028302AC70017223D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB5B87228302A5B0017223D /* ContentView.swift in Sources */,
+				8BB5B87228302A5B0017223D /* HomeView.swift in Sources */,
 				8BB5B87028302A5B0017223D /* Programming_Techniques_and_ApplicationsApp.swift in Sources */,
+				8BB5B88228302AF70017223D /* ContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
