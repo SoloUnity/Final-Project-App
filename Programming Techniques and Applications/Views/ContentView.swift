@@ -19,7 +19,16 @@ struct ContentView: View {
                 if model.currentModule != nil{
                     ForEach(0..<model.currentModule!.content.lessons.count){ index in
                         
-                        ContentViewRow(index: index)
+                        NavigationLink(
+                            destination:
+                                ContentDetailView()
+                                    .onAppear(perform: {
+                                        model.beginLesson(index)
+                                    }),
+                            label: {
+                            ContentViewRow(index: index)
+                        })
+                        
                         
                         
                         
@@ -28,6 +37,7 @@ struct ContentView: View {
                
             }
             .padding()
+            .accentColor(.black)
             .navigationTitle("Learn \(model.currentModule?.category ?? "")") // empty string if no module is set
         }
     }

@@ -6,10 +6,50 @@
 //
 
 import SwiftUI
+import YouTubePlayerKit
 
 struct ContentDetailView: View {
+    
+    @EnvironmentObject var model: ContentModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        let lesson = model.currentLesson
+        
+        let url = YouTubePlayer(source: .url("https://www.youtube.com/watch?v=ktdqlQ1zhg4")) // Replace by String(lesson?.video?? "")
+        // Youtube Player API
+        
+        VStack{
+            YouTubePlayerView(url)
+                .cornerRadius(10)
+                
+            // Description
+            
+            // Next lesson button
+            if model.hasNextLesson(){
+                Button(action: {
+                    //Advance the lesson
+                    model.nextLesson()
+                }
+                , label: {
+                    ZStack{
+                        Rectangle()
+                            .frame(height: 48)
+                            .foregroundColor(Color.cyan)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            
+                        Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
+                            .foregroundColor(Color.white)
+                            .bold()
+                    }
+                    
+                })
+            }
+        }
+            .padding()
+        
+        
     }
 }
 

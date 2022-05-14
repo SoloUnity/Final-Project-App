@@ -19,6 +19,8 @@
 		8BB5B88D28304B900017223D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5B88C28304B900017223D /* ContentView.swift */; };
 		8BB5B88F28305A680017223D /* ContentViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5B88E28305A680017223D /* ContentViewRow.swift */; };
 		8BB5B89128305BBA0017223D /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB5B89028305BBA0017223D /* ContentDetailView.swift */; };
+		8BB5B894283060820017223D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB5B893283060820017223D /* AVKit.framework */; };
+		8BB5B897283062AC0017223D /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8BB5B896283062AC0017223D /* YouTubePlayerKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,7 @@
 		8BB5B88C28304B900017223D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8BB5B88E28305A680017223D /* ContentViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRow.swift; sourceTree = "<group>"; };
 		8BB5B89028305BBA0017223D /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		8BB5B893283060820017223D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB5B897283062AC0017223D /* YouTubePlayerKit in Frameworks */,
+				8BB5B894283060820017223D /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +58,7 @@
 			children = (
 				8BB5B86E28302A5B0017223D /* Programming Techniques and Applications */,
 				8BB5B86D28302A5B0017223D /* Products */,
+				8BB5B892283060810017223D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +137,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8BB5B892283060810017223D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BB5B893283060820017223D /* AVKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +161,9 @@
 			dependencies = (
 			);
 			name = "Programming Techniques and Applications";
+			packageProductDependencies = (
+				8BB5B896283062AC0017223D /* YouTubePlayerKit */,
+			);
 			productName = "Programming Techniques and Applications";
 			productReference = 8BB5B86C28302A5B0017223D /* Programming Techniques and Applications.app */;
 			productType = "com.apple.product-type.application";
@@ -175,6 +192,9 @@
 				Base,
 			);
 			mainGroup = 8BB5B86328302A5B0017223D;
+			packageReferences = (
+				8BB5B895283062AC0017223D /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
 			productRefGroup = 8BB5B86D28302A5B0017223D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -411,6 +431,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8BB5B895283062AC0017223D /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8BB5B896283062AC0017223D /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BB5B895283062AC0017223D /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8BB5B86428302A5B0017223D /* Project object */;
 }
