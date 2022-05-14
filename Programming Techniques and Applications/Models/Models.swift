@@ -33,6 +33,7 @@ struct Lesson: Decodable, Identifiable{
     var title: String
     var video: String
     var explanation: String
+    var duration: String
     
 }
 
@@ -41,6 +42,7 @@ struct Test: Decodable, Identifiable{
     var id: Int
     var image: String
     var time: String
+    var description: String
     var questions: [Question]
     
 }
