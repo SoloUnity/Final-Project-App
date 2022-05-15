@@ -23,7 +23,9 @@ struct HelperDetailView: View {
                     .aspectRatio(CGSize(width: 1920, height: 1080), contentMode: .fit)
                 
                 // Description of helper programs
-                Text("Placeholder Text")
+                Text("There are two helper programs, one to convert PDF slides into an appropriate JSON information file, as well as a conversion to images for display within the lesson card of this app.")
+                    .multilineTextAlignment(.leading)
+                
                 Spacer()
                 
                 //

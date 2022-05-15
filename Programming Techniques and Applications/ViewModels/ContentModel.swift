@@ -43,8 +43,9 @@ class ContentModel: ObservableObject {
         }
     }
     
-    // Finding the module
     func beginModule(_ moduleid: Int){
+        /// beginModule finds the appropriate module to display
+        /// moduleid of type int serves to compare with id property of modules
         
         // Loops through the module array to find the appropriate module
         for index in 0..<modules.count {
@@ -62,24 +63,28 @@ class ContentModel: ObservableObject {
     }
     
     func beginLesson(_ lessonIndex:Int){
-        
+        /// beginLesson finds the appropriate lesson to display
+        /// lessonIndex of type int serves to compare with the total number of lessons
+
         // Check that the lesson index is within range of module lessons
         if lessonIndex < currentModule!.content.lessons.count{
-            
+    
             currentLessonIndex = lessonIndex
             
         }
         else{
             
             currentLessonIndex = 0
+            
         }
         
         // Setting the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
     }
     
-    // Checks to see if theres another lesson using index
+
     func hasNextLesson() -> Bool{
+        /// hasNextLesson serves to see if theres another lesson using index
         
         if currentLessonIndex + 1 < currentModule!.content.lessons.count{
             return true
@@ -91,7 +96,7 @@ class ContentModel: ObservableObject {
     }
     
     func nextLesson(){
-        
+        /// hasNextLesson serves to see if theres another lesson using index
         // Advance to the next lesson
         currentLessonIndex += 1
         
