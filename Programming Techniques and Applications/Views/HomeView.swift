@@ -16,7 +16,7 @@ struct HomeView: View {
         NavigationView{
             VStack (alignment: .leading){
                 Text("Progamming Techniques and Applications")
-                    .padding(.leading, 20)
+                    .padding(.leading, 17)
                 
                 ScrollView{
                     LazyVStack{
@@ -38,7 +38,7 @@ struct HomeView: View {
                                     
                                 }), label: {
                                     // Lesson Card
-                                    HomeViewRow(image: "helper", title: "Helper Programs", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
+                                    HelperView(image: "helper", title: "Helper Programs", description: "To add new lessons or cards, use these helper programs written in Python!")
                                 })
                                 
                                 // Acknowledgements Card

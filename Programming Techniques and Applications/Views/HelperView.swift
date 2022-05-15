@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AcknowledgementsView: View {
+struct HelperView: View {
     
     var image: String
     var title: String
@@ -44,11 +44,11 @@ struct AcknowledgementsView: View {
                     
                     // Time
                     HStack{
-                        Image(systemName: "person.2.circle")
+                        Image(systemName: "wrench.and.screwdriver")
                             .resizable()
                             .frame(width: 15, height: 15)
                         
-                        Text("3 contributors")
+                        Text("2 Helper Programs")
                             .font(.caption)
                     }
                     
@@ -56,6 +56,7 @@ struct AcknowledgementsView: View {
                 }
             
             }
+            .multilineTextAlignment(.leading)
             .padding(.horizontal, 20)
         }
     }

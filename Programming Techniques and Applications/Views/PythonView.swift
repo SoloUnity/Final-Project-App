@@ -13,33 +13,44 @@ struct PythonView: View {
     
     
     var body: some View {
-        ScrollView{
-            LazyVStack{
+            VStack{
                 // Confirm that currentModule is set
-                if model.currentModule != nil{
-                    ForEach(0..<model.currentModule!.content.lessons.count){ index in
-                        
-                        NavigationLink(
-                            destination:
-                                ContentDetailView(index: index)
-                                    .onAppear(perform: {
-                                        model.beginLesson(index)
-                                    }),
-                            label: {
-                            ContentViewRow(index: index)
-                        })
-                        
-                        
-                        
-                        
-                    }
+                Image("2windows")
+                    .resizable()
+                    .cornerRadius(10)
+                    .aspectRatio(CGSize(width: 1920, height: 1080), contentMode: .fit)
+                
+                
+                
+                Text("Placeholder Text")
+                Spacer()
+                
+                Button(action: {
+                    if let url = URL(string: "https://replit.com/@GordonNg/Helper-Programs#pdftojson.py") {
+                           UIApplication.shared.open(url)
+                        }
                 }
-               
+                       , label: {
+                    ZStack{
+                        Rectangle()
+                            .frame(height: 48)
+                            .foregroundColor(Color.cyan)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                        
+                        
+                        Text("Click to Get Helper Programs")
+                            .foregroundColor(Color.white)
+                            .bold()
+                    }
+                    
+                })
+                
+                
             }
             .padding()
-            .accentColor(.black)
-            .navigationTitle("Learn \(model.currentModule?.category ?? "")") // empty string if no module is set
-        }
+            .navigationTitle("Helper Programs") // empty string if no module is set
+
     }
 }
 
