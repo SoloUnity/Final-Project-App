@@ -1,14 +1,14 @@
-//
-//  HomeViewRow.swift
-//  Programming Techniques and Applications
-//
-//  Created by Gordon Ng on 2022-05-14.
-//
+// Gordon Ng , 2031408
+// R. Vincent , instructor
+// Advanced Programming , section 1
+// Final Project
 
 import SwiftUI
 
+// A subview that HomeView calls
 struct HomeViewRow: View {
     
+    // Defines passed in variables parsed from JSON as their appropriate type
     var image: String
     var title: String
     var description: String
@@ -16,66 +16,65 @@ struct HomeViewRow: View {
     var time: String
     
     var body: some View {
+        
+        // View container allowing for stacked UI on the Z axis
         ZStack{
+            
+            // Rectangle view UI
             Rectangle()
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .shadow(radius: 5)
-                .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit) // takes as much space as it can without overflowing from the screen while maintaining the aspect ration
+                .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit)
                 
+            // View container allowing for horizontally stacked UI
             HStack{
                 
-                // Image
+                // Image logo on the card
                 Image(image)
                     .resizable()
                     .frame(width: 116, height: 116)
                     .clipShape(Circle())
                 
-                Spacer()
-                // Text
-                
+
+                // View container allowing for vertically stacked UI, alignment is leading on the left, with a vertical spacing of 10 for text
                 VStack(alignment: .leading, spacing: 10){
-                    //Headline
+                    
+                    // Title of the card
                     Text(title)
                         .bold()
-                        
                     
-                    //Description
+                    // Description
                     Text(description)
                         .padding(.bottom, 20)
                         .font(.caption)
                     
-                    //Icons
+                    // View container allowing for horizontally stacked UI
                     HStack{
-                        // Number of lessons and questions
+                        
+                        // Icon for lessons
                         Image(systemName: "books.vertical")
                             .resizable()
                             .frame(width: 15, height: 15)
                         
+                        // Displays number of lessons
                         Text(count)
                             .font(.caption)
                         
-                        
-                        // Time
+                        // Icon for length of lessons
                         Image(systemName: "clock")
                             .resizable()
                             .frame(width: 15, height: 15)
                         
+                        // Displays length of lessons
                         Text(time)
                             .font(.caption)
                     }
                 }
-                .multilineTextAlignment(.leading)
-            
             }
-            .padding(.horizontal, 20)
+            .multilineTextAlignment(.leading)   // Forces text to the left
+            .padding(.horizontal, 20)   // 20 pixel padding on left and right side
         }
     }
 }
 
-struct HomeViewRow_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeViewRow(image: "python", title: "Learn Python", description: "A second level programming course covering parts of a university level data structures course", count: "11 lessons", time: "2 Months")
-            
-    }
-}

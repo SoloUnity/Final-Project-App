@@ -1,12 +1,9 @@
-//
-//  Models.swift
-//  Programming Techniques and Applications
-//
-//  Created by Gordon Ng on 2022-05-13.
-//
+// Gordon Ng , 2031408
+// R. Vincent , instructor
+// Advanced Programming , section 1
+// Final Project
 
-import Foundation
-
+// Each module
 struct Module: Decodable, Identifiable{
     
     var id: Int
@@ -15,6 +12,7 @@ struct Module: Decodable, Identifiable{
     
 }
 
+// General information of each Module
 struct Content: Decodable, Identifiable{
     
     var id: Int
@@ -23,9 +21,9 @@ struct Content: Decodable, Identifiable{
     var description: String
     var lessons: [Lesson]
     
-    
 }
 
+// Specific lessons form Content
 struct Lesson: Decodable, Identifiable{
     
     var id: Int
@@ -33,15 +31,6 @@ struct Lesson: Decodable, Identifiable{
     var video: String
     var pages: String
     
-}
-
-
-struct Question: Decodable, Identifiable{
-    
-    var id: Int
-    var content: String
-    var correctIndex: Int
-    var answers: [String]
 }
 
 

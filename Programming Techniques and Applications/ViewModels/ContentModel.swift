@@ -1,26 +1,19 @@
-//
-//  ContentModel.swift
-//  Programming Techniques and Applications
-//
-//  Created by Gordon Ng on 2022-05-13.
-//
+// Gordon Ng , 2031408
+// R. Vincent , instructor
+// Advanced Programming , section 1
+// Final Project
 
 import Foundation
 
+// Class of typle ObervableObject: allowing global access in other files
 class ContentModel: ObservableObject {
     
-    // List of modules
-    @Published var modules = [Module]()
-    
-    // Current module
-    @Published var currentModule: Module?
+    // Published property allows the notification views when variables are changed
+    @Published var modules = [Module]() // Array of modules, published
+    @Published var currentModule: Module?   // Current module unwrapped optional
+    @Published var currentLesson: Lesson?   // Current lesson unwrapped optional
     var currentModuleIndex = 0
-    
-    // Current lesson
-    @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
-    
-    var styleData: Data?
     
     // Initialiser gets called when class ContentModel has new instance
     init(){
@@ -30,15 +23,15 @@ class ContentModel: ObservableObject {
     // Data methods
     func getLocalData() {
         
-        // Get URL to the JSON file
+        // Gets URL to the JSON file
         let jsonURL = Bundle.main.url(forResource: "data", withExtension: "json")
         
-        // Read file into a data object
-        // Error like try/except from python
+        
+        // Do and Catch is like try and except from python
         do{
-            let jsonData = try Data(contentsOf: jsonURL!)
+            let jsonData = try Data(contentsOf: jsonURL!) // Read file into a data object
             
-            // decoding the Json file
+            // Decodes the Json file using a JSONDecoder instance
             let jsonDecoder = JSONDecoder()
             let modules = try jsonDecoder.decode([Module].self ,from: jsonData)
     
@@ -48,31 +41,17 @@ class ContentModel: ObservableObject {
         catch{
             print("Error: Could not parse through the local data, please check the format")
         }
-        
-        // Parsing the style.html file
-        let styleUrl = Bundle.main.url(forResource: "style", withExtension: "html")
-        
-        do{
-            // Read the file into a data object
-            let styleData = try Data(contentsOf: styleUrl!)
-            
-            // Assin to property optional
-            self.styleData = styleData
-        }
-        catch{
-            // Errors
-            print("Could not parse the style.html data")
-        }
     }
     
-    // Module Navigation methods
+    // Finding the module
     func beginModule(_ moduleid: Int){
         
-        // Find the index for module ID
+        // Loops through the module array to find the appropriate module
         for index in 0..<modules.count {
+            
+            // Checks to see if that module is equivalent to passed in moduleid
             if modules[index].id == moduleid {
                 
-                // Found the matching module
                 currentModuleIndex = index
                 break
             }
@@ -83,11 +62,15 @@ class ContentModel: ObservableObject {
     }
     
     func beginLesson(_ lessonIndex:Int){
+        
         // Check that the lesson index is within range of module lessons
         if lessonIndex < currentModule!.content.lessons.count{
+            
             currentLessonIndex = lessonIndex
+            
         }
         else{
+            
             currentLessonIndex = 0
         }
         
@@ -95,7 +78,9 @@ class ContentModel: ObservableObject {
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
     }
     
+    // Checks to see if theres another lesson using index
     func hasNextLesson() -> Bool{
+        
         if currentLessonIndex + 1 < currentModule!.content.lessons.count{
             return true
         }
@@ -106,21 +91,23 @@ class ContentModel: ObservableObject {
     }
     
     func nextLesson(){
-        // Advance the lesson
+        
+        // Advance to the next lesson
         currentLessonIndex += 1
         
         //Check that it is within range
         if currentLessonIndex < currentModule!.content.lessons.count{
+            
             // Set the current lesson property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            
         }
         else{
+            
             // Reset the lesson state
             currentLesson = nil
             currentLessonIndex = 0
             
         }
-        
-        
     }
 }
