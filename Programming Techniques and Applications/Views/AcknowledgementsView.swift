@@ -12,7 +12,6 @@ struct AcknowledgementsView: View {
     var image: String
     var title: String
     var description: String
-    var count: String
     
     var body: some View {
         ZStack{
@@ -43,17 +42,7 @@ struct AcknowledgementsView: View {
                         .padding(.bottom, 20)
                         .font(.caption)
                     
-                    //Icons
-                    HStack(){
-                        // Number of lessons and questions
-                        Image(systemName: "person.2.circle")
-                            .resizable()
-                            .frame(width: 15, height: 15)
-                        
-                        Text(count)
-                            .font(.caption)
-                        
-                    }
+              
                 }
             
             }

@@ -34,10 +34,11 @@ struct HomeViewRow: View {
                 Spacer()
                 // Text
                 
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 10){
                     //Headline
                     Text(title)
                         .bold()
+                        
                     
                     //Description
                     Text(description)
@@ -64,6 +65,7 @@ struct HomeViewRow: View {
                             .font(.caption)
                     }
                 }
+                .multilineTextAlignment(.leading)
             
             }
             .padding(.horizontal, 20)
@@ -73,7 +75,7 @@ struct HomeViewRow: View {
 
 struct HomeViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewRow(image: "python", title: "Learn Python", description: "A second level programming course covering parts of a university level data structures course", count: "x lessons", time: "2 Hours")
+        HomeViewRow(image: "python", title: "Learn Python", description: "A second level programming course covering parts of a university level data structures course", count: "11 lessons", time: "2 Months")
             
     }
 }
