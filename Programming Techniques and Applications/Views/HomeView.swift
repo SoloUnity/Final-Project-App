@@ -44,6 +44,7 @@ struct HomeView: View {
             }
             .navigationTitle("Final Project")
             
+            
         }
         .navigationViewStyle(.stack)
     }

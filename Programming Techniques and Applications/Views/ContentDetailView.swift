@@ -27,20 +27,21 @@ struct ContentDetailView: View {
         
         
         
-        // Youtube Player API
+        
         
         ScrollView{
             
-            ScrollViewReader { value in
+            ScrollViewReader { (proxy: ScrollViewProxy) in
                 
                 VStack(alignment: .leading){
                     
+                    // Youtube Player API
                     YouTubePlayerView(url)
                         .cornerRadius(10)
                         .aspectRatio(CGSize(width: 1920, height: 1080), contentMode: .fit)
+                        
                     
-                    // Description
-                    
+                    // PDF in Images
                     ForEach(0...((pages ?? 1) - 1), id: \.self) { page in
                         Image("l" + String(id + 1) + "-" + String(page + 1))
                             .resizable()
@@ -51,7 +52,7 @@ struct ContentDetailView: View {
                     if model.hasNextLesson(){
                         Button(action: {
                             //Advance the lesson
-                            value.scrollTo(0, anchor: .top)
+                            proxy.scrollTo("top", anchor: .top)
                             model.nextLesson()
                             
                         }
@@ -74,6 +75,8 @@ struct ContentDetailView: View {
                 }
                 .padding(.horizontal)
                 .navigationTitle(model.currentModule!.content.lessons[model.currentLessonIndex].title)
+                .id("top") 
+                .tag("top")
                 
                 
             }

@@ -34,7 +34,7 @@ struct HomeViewRow: View {
                 Spacer()
                 // Text
                 
-                VStack(alignment: .leading, spacing: 10){
+                VStack(alignment: .leading){
                     //Headline
                     Text(title)
                         .bold()
@@ -54,8 +54,6 @@ struct HomeViewRow: View {
                         Text(count)
                             .font(.caption)
                         
-                        
-                        Spacer()
                         
                         // Time
                         Image(systemName: "clock")
