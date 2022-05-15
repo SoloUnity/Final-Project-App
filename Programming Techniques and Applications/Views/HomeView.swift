@@ -42,7 +42,7 @@ struct HomeView: View {
                                 })
                                 
                                 // Acknowledgements Card
-                                AcknowledgementsView(image: "mari", title: "Acknowledgements", description: "Thank you to Robert Vincent for providing the course material, Jione Ban for the companion python programs and Gordon for this app")
+                                AcknowledgementsView(image: "mari", title: "Acknowledgements", description: "Thank you to Robert Vincent for providing the course material, Jione Ban for the companion python programs and Gordon for this app.")
                                 
 
                                 
