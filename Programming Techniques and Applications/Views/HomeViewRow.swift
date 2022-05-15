@@ -26,7 +26,7 @@ struct HomeViewRow: View {
             HStack{
                 
                 // Image
-                Image(image) //Image from https://www.pinclipart.com/picdir/big/269-2691398_python-logo-clipart-transparent-background-png-download.png
+                Image(image)
                     .resizable()
                     .frame(width: 116, height: 116)
                     .clipShape(Circle())
@@ -75,7 +75,7 @@ struct HomeViewRow: View {
 
 struct HomeViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewRow(image: "python", title: "Learn Python", description: "some description", count: "x lessons", time: "2 Hours")
+        HomeViewRow(image: "python", title: "Learn Python", description: "A second level programming course covering parts of a university level data structures course", count: "x lessons", time: "2 Hours")
             
     }
 }

@@ -116,8 +116,8 @@ class ContentModel: ObservableObject {
         }
         else{
             // Reset the lesson state
-            currentLessonIndex = 0
             currentLesson = nil
+            currentLessonIndex = 0
             
         }
         

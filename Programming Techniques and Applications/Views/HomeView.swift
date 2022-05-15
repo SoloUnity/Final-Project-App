@@ -17,6 +17,7 @@ struct HomeView: View {
             VStack (alignment: .leading){
                 Text("Progamming Techniques and Applications")
                     .padding(.leading, 20)
+                
                 ScrollView{
                     LazyVStack{
                         ForEach(model.modules){ module in
@@ -30,11 +31,10 @@ struct HomeView: View {
                                     // Lesson Card
                                     HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
                                 })
-                               
-                                
-                    
+
                                 // Test Card
-                                HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
+                                AcknowledgementsView(image: "mari", title: "Acknowledgements", description: "Thank you to Robert Vincent, Jione Ban, and Gordon Ng", count: "3 Contributors")
+                                
                             }
                         }
                     }

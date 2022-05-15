@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentViewRow: View {
     
     @EnvironmentObject var model: ContentModel
+    
     var index: Int
     
     var body: some View {
@@ -20,7 +21,7 @@ struct ContentViewRow: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .shadow(radius: 5)
-                .frame( height: 66)
+                .frame(height: 66)
             
             HStack (spacing: 30){
                 Text(String(index + 1))
@@ -29,7 +30,9 @@ struct ContentViewRow: View {
                 VStack(alignment: .leading){
                     Text(lesson.title)
                         .bold()
-                    Text(lesson.duration)
+                        .font(.system(size: 14))
+                        
+                    Text("\(lesson.pages) pages")
                 }
             }
             .padding()

@@ -12,7 +12,6 @@ struct Module: Decodable, Identifiable{
     var id: Int
     var category: String
     var content: Content
-    var test: Test
     
 }
 
@@ -32,20 +31,10 @@ struct Lesson: Decodable, Identifiable{
     var id: Int
     var title: String
     var video: String
-    var explanation: String
-    var duration: String
+    var pages: String
     
 }
 
-struct Test: Decodable, Identifiable{
-    
-    var id: Int
-    var image: String
-    var time: String
-    var description: String
-    var questions: [Question]
-    
-}
 
 struct Question: Decodable, Identifiable{
     
