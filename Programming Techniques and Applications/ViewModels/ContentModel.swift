@@ -17,30 +17,45 @@ class ContentModel: ObservableObject {
     
     // Initialiser gets called when class ContentModel has new instance
     init(){
-        getLocalData()
+        getRemoteData() // Downloads remote JSON file and parses through it
     }
     
-    // Data methods
-    func getLocalData() {
-        
-        // Gets URL to the JSON file
-        let jsonURL = Bundle.main.url(forResource: "data", withExtension: "json")
-        
-        
-        // Do and Catch is like try and except from python
-        do{
-            let jsonData = try Data(contentsOf: jsonURL!) // Read file into a data object
-            
-            // Decodes the Json file using a JSONDecoder instance
-            let jsonDecoder = JSONDecoder()
-            let modules = try jsonDecoder.decode([Module].self ,from: jsonData)
     
-            // Assign parsed modules to the modules property
-            self.modules = modules
+    func getRemoteData() {
+        /// Downloads remote JSON file and parses through it
+        
+        let urlString = "https://raw.githubusercontent.com/SoloUnity/Programming-Techniques-and-Applications-App/main/data.json"
+        let url = URL(string: urlString) // Create a URL object
+        
+        guard url != nil else {
+            // In case of a faulty or empty URL, returns and stops code
+            return
         }
-        catch{
-            print("Error: Could not parse through the local data, please check the format")
+        
+        let request = URLRequest(url: url!) // Pass unwrapped URL object into a URLRequest object
+        let session = URLSession.shared // Gets the session and begins the task
+        let dataTask = session.dataTask(with: request) { (data, response, error) in // Fetches the file from url
+            
+            guard error == nil else { // Checks for an empty or nil url
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder() // Create an instance of JSONDecoder
+                let modules = try decoder.decode([Module].self, from: data!) // Decode
+                
+                DispatchQueue.main.async{ // Asigns code to the main thread instead of the background thread
+                    self.modules += modules // Add parsed modules into the modules property
+                }
+                
+            }
+            catch {
+                print("Error: Could not parse through the remote data, please check the format") // Error message
+            }
         }
+        
+        dataTask.resume() // Starts the data task
+        
     }
     
     func beginModule(_ moduleid: Int){

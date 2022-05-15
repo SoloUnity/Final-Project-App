@@ -3,8 +3,6 @@
 // Advanced Programming , section 1
 // Final Project
 
-
-
 import SwiftUI
 
 // The first view accessed by the opening of the app
