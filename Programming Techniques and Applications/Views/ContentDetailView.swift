@@ -25,7 +25,7 @@ struct ContentDetailView: View {
         // View container allowing for scrolling
         ScrollView{
             
-            // Obtains info from location in a ScrollView
+            // Obtains information from current location in a ScrollView page
             ScrollViewReader { (proxy: ScrollViewProxy) in // ScrollViewProxy scans the various id of views
                 
                 // View container allowing for vertically stacked UI

@@ -29,7 +29,7 @@ struct HomeView: View {
                     // View container allowing for vertically stacked UI, differs as it unloads when not on screen for performance
                     LazyVStack{
                         
-                        // Loops through Module parsed from JSON file in ContentModel
+                        // Loops through Module parsed from JSON file in ContentModel, allows for remote update
                         ForEach(model.modules){ module in
                             
                             // View container allowing for vertically stacked UI, 20 spacing between each subsequent new card
