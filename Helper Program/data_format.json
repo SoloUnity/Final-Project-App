@@ -1,0 +1,74 @@
+{
+    "id": 0,
+    "category": "Python",
+    "content": {
+        "id": 0,
+        "image": "python",
+        "time": "2 Months",
+        "description": "A second level programming course covering parts of a university level data structures course",
+        "lessons": [
+            {
+                "id": 0,
+                "title": "Constants and Variables",
+                "video": "Learn%20Swift%20for%20Beginners%20Lesson%201%20-%20Variables%20(Swift%205%20compatible)-2OZ07fklur8.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 1,
+                "title": "Numbers",
+                "video": "Learn%20Swift%20for%20Beginners%20Lesson%201%20-%20Variables%20(Swift%205%20compatible)-2OZ07fklur8.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 2,
+                "title": "Booleans",
+                "video": "Learn%20Swift%20for%20Beginners%20Lesson%201%20-%20Variables%20(Swift%205%20compatible)-2OZ07fklur8.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 3,
+                "title": "Optionals",
+                "video": "Learn%20Swift%20for%20Beginners%20-%20Ep%2013%20-%20Optionals-uT2IHQpE3ms.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 4,
+                "title": "Operators",
+                "video": "Learn%20Swift%20for%20Beginners%20Lesson%201%20-%20Variables%20(Swift%205%20compatible)-2OZ07fklur8.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 5,
+                "title": "Strings",
+                "video": "Learn%20Swift%20for%20Beginners%20Lesson%201%20-%20Variables%20(Swift%205%20compatible)-2OZ07fklur8.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 6,
+                "title": "Control Flow",
+                "video": "Learn%20Swift%20for%20Beginners%20-%20Ep%205%20-%20Loops%20Part%201-vxyrLbmm9Oo.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 7,
+                "title": "Functions",
+                "video": "Learn%20Swift%20for%20Beginners%20-%20Ep%207%20-%20Functions%20Part%201-2kwyQ5w00Uc.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 8,
+                "title": "Structures and Classes",
+                "video": "Learn%20Swift%20for%20Beginners%20-%20Ep%209%20-%20Classes%20Part%201-ZDzdz52tex4.mp4",
+                "duration": "17 minutes"
+            },
+            {
+                "id": 9,
+                "title": "Error Handling",
+                "video": "Try%20_%20Catch%20Basics%20-%20Swift%20Error%20Handling%20-%20Xcode%2010,%20Swift%204-9hb80LAwf5c.mp4",
+                "duration": "17 minutes"
+            }
+        ]
+    }
+
+}
+
