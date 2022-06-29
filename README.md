@@ -1,6 +1,10 @@
 # Final Programming Project Submission
 
-This is the final project I submitted for my 420-LCW-MS PROGRAMMING TECHNIQUES AND APPLICATIONS course at Marianopolis. It is an app containing the course's lectures, accompanied by youtube videos and a python helper program to remotely update the app via JSON. It works across every major Apple platform and takes advantage of many of the company's technologies. Here's a demonstration of the app: https://youtu.be/UbjNyS9u384
+This is the final project I submitted for my 420-LCW-MS PROGRAMMING TECHNIQUES AND APPLICATIONS course at Marianopolis. It is an app containing the course's lectures, accompanied by youtube videos and a python helper program to remotely update the app via JSON. It works across every major Apple platform and takes advantage of many of the company's technologies. 
+
+Here's a demonstration of the app: https://youtu.be/UbjNyS9u384
+
+Documentation: https://github.com/SoloUnity/lecture-app/blob/main/Documentation.pdf
 
 <div align="center">
 <img width="1081" alt="image" src="https://user-images.githubusercontent.com/77747704/170801372-f853dfbb-c4fb-4d21-9e01-bfe7d30817ff.png">
