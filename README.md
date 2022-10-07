@@ -1,5 +1,7 @@
 # Final Programming Project Submission
 
+See the newer iteration of the app: https://github.com/SoloUnity/Learning-App
+
 This is the final project I submitted for my 420-LCW-MS PROGRAMMING TECHNIQUES AND APPLICATIONS course at Marianopolis. It is an app containing the course's lectures, accompanied by youtube videos and a python helper program to remotely update the app via JSON. It works across every major Apple platform and takes advantage of many of the company's technologies. 
 
 Here's a demonstration of the app: https://youtu.be/UbjNyS9u384
